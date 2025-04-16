@@ -1,5 +1,6 @@
 ﻿using LogWebAppMvc.Services;
 using Microsoft.Extensions.Configuration;
+using System.Data.SQLite;
 
 namespace LogWebAppMvcTest
 {
@@ -19,7 +20,7 @@ namespace LogWebAppMvcTest
             // Create the test DB and seed data
             if (!File.Exists("test_logs.db"))
             {
-                using var connection = new Microsoft.Data.Sqlite.SqliteConnection("Data Source=test_logs.db");
+                using var connection = new SQLiteConnection("Data Source=test_logs.db");
                 connection.Open();
 
                 var command = connection.CreateCommand();

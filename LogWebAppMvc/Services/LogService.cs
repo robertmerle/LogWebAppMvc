@@ -1,7 +1,6 @@
-﻿using LogWebAppMvc.Data;
-using LogWebAppMvc.Models;
-using Microsoft.Data.Sqlite;
+﻿using LogWebAppMvc.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SQLite;
 
 namespace LogWebAppMvc.Services
 {
@@ -33,7 +32,7 @@ namespace LogWebAppMvc.Services
         {
             var logs = new List<LogModel>();
 
-            using var connection = new SqliteConnection(GetConnectionString());
+            using var connection = new SQLiteConnection(GetConnectionString());
             await connection.OpenAsync();
 
             var command = connection.CreateCommand();
