@@ -1,0 +1,21 @@
+﻿@model IEnumerable<LogWebAppMvc.Models.LogModel>
+
+<h2>Logs</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Id</td>
+                <td>@log.Message</td>
+            </tr>
+        }
+    </tbody>
+</table>
